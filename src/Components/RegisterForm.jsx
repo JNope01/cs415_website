@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 
 export const RegisterForm = (props) => {
     const navigate = useNavigate();
+    const [userName, setUserName] = useState('');
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const [firstName, setFirstName] = useState('');
@@ -17,6 +18,7 @@ export const RegisterForm = (props) => {
         const payload = JSON.stringify({
             first_name: firstName,
             last_name: lastName,
+            user_name: userName,
             email: email,
             pass_word: pass
         })
@@ -78,6 +80,8 @@ export const RegisterForm = (props) => {
                 <input required value={firstName} onChange={(e) => setFirstName(e.target.value)} type="text" placeholder="First Name" id="firstName" name="firstName"/>
                 <label htmlFor="lastName">Last Name</label>
                 <input required value={lastName} onChange={(e) => setLastName(e.target.value)} type="text" placeholder="Last Name" id="lastName" name="lastName"/>
+                <label htmlFor="userName">User Name</label>
+                <input required value={userName} onChange={(e) => setUserName(e.target.value)} type="text" placeholder="User Name" id="userName" name="userName"/>
                 <label htmlFor="email">Email</label>
                 <input required value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="email@email.com" id="email" name="email"/>
                 <label htmlFor="password">Password</label>
