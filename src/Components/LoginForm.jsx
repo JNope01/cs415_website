@@ -35,6 +35,7 @@ const LoginForm = (props) => {
                   }
                }
             ).then(data => {
+              console.log(data)  
               if (!success) {
                   for (const err in data.errors){
                   for (const msg in data.errors[err]) errorText += data.errors[err][msg]
